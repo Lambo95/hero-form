@@ -1,0 +1,89 @@
+<!-- <div class="container ">
+    <div class="page-header">
+        <h3>Hero Form TD</h3>
+    </div>
+    <div class="d-flex justify-content-center" id="colorDiv">
+        <div class="col-md-6 col-md-offset-3" id="innerDiv">
+
+            <form #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" ngModel class="form-control" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="alterEgo">Alter Ego</label>
+                    <input type="text" ngModel class="form-control" name="alterEgo" required>
+                </div>
+                <div class="form-group">
+                    <label for="potere">Super Potere</label>
+                    <select ngModel class="form-control" required name="power" #power>
+                        <option *ngFor="let potere of poteri" [value]="potere">{{potere}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nemico">Nemico</label>
+                    <input type="text" ngModel class="form-control" name="nemico" required>
+                </div>
+                <div class="form-group">
+                    <label for="pianeta">Pianeta</label>
+                    <input type="text" ngModel class="form-control" name="pianeta" required>
+                </div>
+                <div class="form-group">
+                    <label for="debolezza">Debolezza</label>
+                    <input type="text" ngModel class="form-control" name="debolezza">
+                </div>
+            </form>
+            <button type="submit" id="submitBtn" (click)="addHero()">Crea</button>
+            <br />
+
+        </div>
+    </div> -->
+
+<div class="container ">
+    <div class="page-header">
+        <h3>Hero Form TD</h3>
+    </div>
+    <div class="d-flex justify-content-center" id="colorDiv">
+        <div class="col-md-6 col-md-offset-3" id="innerDiv">
+
+            <form (ngSubmit)="addHero()" #f="ngForm">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" ngModel class="form-control" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="alterEgo">Alter Ego</label>
+                    <input type="text" ngModel class="form-control" name="alterEgo" required>
+                </div>
+                <div class="form-group">
+                    <label for="potere">Super Potere</label>
+                    <select ngModel class="form-control" required name="power" #power>
+                        <option *ngFor="let potere of poteri" [value]="potere">{{potere}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nemico">Nemico</label>
+                    <input type="text" ngModel class="form-control" name="nemico" required>
+                </div>
+                <div class="form-group">
+                    <label for="pianeta">Pianeta</label>
+                    <input type="text" ngModel class="form-control" name="pianeta" required>
+                </div>
+                <div class="form-group">
+                    <label for="debolezza">Debolezza</label>
+                    <input type="text" ngModel class="form-control" name="debolezza">
+                </div>
+                <button type="submit" id="submitBtn" [disabled]="f.invalid">Crea</button>
+            </form>
+            <br />
+        </div>
+        <div class="col-md-6 col-md-offset-3" *ngIf="myHeroIsAdd">
+            <!-- <ul>
+                <li>{{myHero.nome}}</li>
+                <li>{{myHero.alterEgo}}</li>
+                <li>{{myHero.pianeta}}</li>
+                <li>{{myHero.nemico}}</li>
+                <li>{{myHero.debolezza}}</li>
+            </ul> -->
+        </div>
+    </div>
